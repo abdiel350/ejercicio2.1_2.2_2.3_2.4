@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar style="--background: #3880ff; --color: white;">
+    <ion-title>iVideoclub</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <!-- Recorremos las películas del archivo JSON -->
+      <ion-col size="12" *ngFor="let movie of datapeli">
+        <ion-item button detail>
+          <!-- Miniatura de la película -->
+          <ion-thumbnail slot="start">
+            <ion-img [src]="'assets/posters/' + movie.poster"></ion-img>
+          </ion-thumbnail>
+          <!-- Información de la película -->
+          <ion-label>
+            <h2>{{ movie.title }}</h2>
+           
+            <strong style="color: #666769;">Director:</strong> {{ movie.director }}
+            <strong style="color: #666769;">Año:</strong>{{ movie.year }}
+          </ion-label>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
